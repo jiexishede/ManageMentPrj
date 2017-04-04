@@ -1,0 +1,114 @@
+//
+//  PrefixHeader.pch
+//  MiaoGe_iOS_MG
+//
+//  Created by miaoge_iOS on 16/5/25.
+//  Copyright © 2016年 ZheJiang MiaoGe Technology Co., Ltd. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+#define JPUSHKEY @"4cdf0eecd0a11c4798c8ec4d"
+#define JPUSHTYPE @"ios_dev"
+#define BUGLYKEY @"d5bUwBAuNlythnIP"
+#import "ColorHeader.h"
+
+#define IOS7 [[[UIDevice currentDevice] systemVersion]floatValue]>=7
+#define IOS8 [[[UIDevice currentDevice] systemVersion]floatValue]>=8
+#define IOS10 ([[[UIDevice currentDevice]systemVersion]compare:@"10.0" options:NSNumericSearch] !=NSOrderedAscending) 
+
+#define ViewSizeW ([[UIScreen mainScreen] bounds]).size.width
+#define ViewSizeH ([[UIScreen mainScreen] bounds]).size.height
+#define TopHeadHight 64.0
+#define TopHeadHight 64.0
+#define NoLeftImgFlag @"leftimgflag"
+#define Left_FLAG @"left"
+#define Right_FLAG @"right"
+#define RightImgFlag @"rightimgflag"
+#define Status @"status"
+#define RESULT @"result"
+#define MSG @"message"
+#define TitleText @"title"
+#define Alignment @"alignment"
+#define TOKENXX @"token"
+#define ISLOGINED @"islogined"
+#define JPUSHID @"jpushid"
+#define ACCOUNT @"account"
+#define NAME @"name"
+#define PASSWORD @"psdword"
+#define SHOPID @"shopid"
+#define SHOPNAME @"shopname"
+#define DEVICETYPE @"devicetype"
+
+#define VERSIONCODE @"3"
+#define VERSION @"1.2.4"
+#define YYVERSION @"yyversion"   //语音版本号
+#define VERSIONTYPE @"5"
+
+#define IS_IOS7_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0)
+#define IS_IOS8_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+#define IS_IOS10_OR_LATER    ([[[UIDevice currentDevice] systemVersion] floatValue] >= 10.0)
+
+
+#define RGBA(r, g, b, a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define YYYYMMDD @"yyyy-MM-dd"
+#define HHMM @"HH:mm"
+#define YYYYMMDDHHMMSS @"yyyy-MM-dd HH:mm:ss"
+#define DBNAME @"miaogetemp.db"
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
+#define LBL_TEXTSIZE(text, font) [text length] > 0 ? [text \
+sizeWithAttributes:@{NSFontAttributeName:font}] : CGSizeZero;
+#else
+#define LBL_TEXTSIZE(text, font) [text length] > 0 ? [text sizeWithFont:font]: CGSizeZero;
+#endif
+
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= 70000
+#define LBL_SIZE(text, font, w, h) [text length] > 0 ? [text boundingRectWithSize:CGSizeMake(w, h) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:font} context:nil].size : CGSizeZero;
+#else
+#define LBL_SIZE(text, font, w, h) [text length] > 0 ? [text sizeWithFont:font constrainedToSize:CGSizeMake(w, h)]: CGSizeZero;
+#endif
+
+//测试环境
+#define ApiServer @"http://guanjia.51miaoge.net/muge/"
+#define DoMain @".51miaoge.net"
+
+//api
+#define HomeMenuApi @"admin/getMenuList"
+#define LoginApi @"admin/login"
+#define LoginOutApi @"admin/logout"
+#define ChangePwd @"admin/changepwd"
+#define UserInfoApi @"admin/user/profile"
+#define GetYuYin @"admin/getNewestGuardToneList"
+
+//h5跳转
+#define MineApi @"admin/page/user/profile" 
+#define ServicesCallApi @"admin/page/servicescalls"
+#define BookingApi @"admin/page/booking"
+#define PickupApi @"admin/page/wine/pickup"
+#define StockApi @"admin/page/wine"
+#define WxBookingApi @"admin/page/wechat/booking"
+#define CzlqApi @"admin/page/vouchers/pickups"
+
+#define MkczdetailApi @"admin/page/card/cardSale"
+#define MkxfdetailApi @"admin/page/card/cardSpend"
+#define MkdhdetailApi @"admin/page/vouchers/index"
+
+#define MkjbApi @"http://mgnews.51miaoge.com/"
+#define MkchApi @"http://mgplan.51miaoge.com/"
+#define HzsqApi @"https://www.sojump.hk/jq/11242009.aspx/"
+
+#define GetSCanInfo @"admin/scancode"
+//版本检测
+#define NETURL_VERSIONCHECK @"asset/appVersionInfo"
+
+#ifndef __OPTIMIZE__
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...){}
+#endif
+
+#endif /* PrefixHeader_pch */
